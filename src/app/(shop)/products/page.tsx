@@ -55,14 +55,18 @@ const items: ProductProps[] = [
 export default function Products() {
     const [cart, setCart] = useState<ProductProps[]>([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [liked, setLiked] = useState(false)
+    const [liked, setLiked] = useState<string[]>([])
 
     const toggleLike = (
         e: React.MouseEvent<HTMLElement>,
         item: ProductProps
     ) => {
         e.preventDefault();
-        setLiked(!liked);
+        if (liked.includes(item.productId)) {
+            setLiked(liked.filter((itemId) => itemId !== item.productId));
+        } else {
+            setLiked([...liked, item.productId]);
+        }
     }
 
     const handleClick = (
@@ -99,13 +103,11 @@ export default function Products() {
                             <div className="text-gray-600">{price}</div>
                         </div>
                         <div className="flex justify-between items-center mt-2">
-                            <button className="bg-rose-300 text-white p-2 my-2 hover:bg-rose-200"
-                                onClick={(e) =>
-                                handleClick(e, { name, price, productId, imageUrl })}>
-                                Add to cart
+                            <button className="bg-rose-300 text-white px-5 py-2 hover:bg-rose-200" onClick={(e) => handleClick(e, { name, price, productId, imageUrl })}>
+                                Add to Cart
                             </button>
                             <button onClick={(e) => toggleLike(e, { name, price, productId, imageUrl })}>
-                                <Heart size={45} className={`${liked ? 'text-pink-500 fill-pink-500' : 'text-black'}`} />
+                                <Heart size={45} className={`${liked.includes(productId) ? 'text-pink-500 fill-pink-500' : 'text-black'}`} />
                             </button>
                         </div>
                     </div>
