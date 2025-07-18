@@ -36,11 +36,11 @@ export default function RootLayout({
             width={50}
             height={50}
           />
-          <Link href="./" className="font-bold">HappyMart</Link>
-          <div className="flex gap-x-10 justify-center w-full font-bold">
-            <Link href="./">Home</Link>
-            <Link href="./products">Product</Link>
-            <Link href="./contact">Contact</Link>
+          <Link href="./" className="font-bold text-3xl">HappyMart</Link>
+          <div className="flex gap-x-10 justify-center w-full font-bold text-lg">
+            <Link href="./" className="hover:text-rose-100">Home</Link>
+            <Link href="./products" className="hover:text-rose-100">Product</Link>
+            <Link href="./contact" className="hover:text-rose-100">Contact</Link>
           </div>
         </header>
         {children}
