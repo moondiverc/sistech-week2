@@ -1,11 +1,49 @@
+import { Phone, Mail, MessageCircle, MapPin } from 'react-feather';
+
 export default function Contact() {
     return (
-        <main className="flex justify-center py-50">
-            <div className="bg-white/30 inline-block rounded-lg p-10">
-                <h1>Contact Us!</h1>
-                <div>WhatsApp: 08123456789</div>
-                <div>Email: HappyMart@example.com</div>
-                <div>Call: 08123456789</div>
+        <main className="flex justify-center py-5">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center p-10 shadow-lg max-w-2xl w-full mx-4">
+                <h1 className="font-bold text-3xl text-gray-800 mb-2">Contact Us!</h1>
+                <h2 className="text-lg text-gray-600 mb-8">We'd love to hear from you. Get in touch with us!</h2>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    {/* WhatsApp */}
+                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
+                        <div className="flex items-center justify-center mb-3">
+                            <MessageCircle className="text-green-500" size={32} />
+                        </div>
+                        <h3 className="font-semibold text-gray-800 mb-2">WhatsApp</h3>
+                        <p className="text-gray-600">08123456789</p>
+                    </div>
+
+                    {/* Email */}
+                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
+                        <div className="flex items-center justify-center mb-3">
+                            <Mail className="text-blue-500" size={32} />
+                        </div>
+                        <h3 className="font-semibold text-gray-800 mb-2">Email</h3>
+                        <p className="text-gray-600">HappyMart@example.com</p>
+                    </div>
+
+                    {/* Phone */}
+                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
+                        <div className="flex items-center justify-center mb-3">
+                            <Phone className="text-purple-500" size={32} />
+                        </div>
+                        <h3 className="font-semibold text-gray-800 mb-2">Phone Call</h3>
+                        <p className="text-gray-600">08123456789</p>
+                    </div>
+
+                    {/* Address */}
+                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
+                        <div className="flex items-center justify-center mb-3">
+                            <MapPin className="text-red-500" size={32} />
+                        </div>
+                        <h3 className="font-semibold text-gray-800 mb-2">Visit Us</h3>
+                        <p className="text-gray-600">Jl. Blind Box No. 123<br />Jakarta, Indonesia</p>
+                    </div>
+                </div>
             </div>
         </main>
     )

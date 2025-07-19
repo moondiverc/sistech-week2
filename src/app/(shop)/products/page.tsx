@@ -4,53 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Heart } from 'react-feather';
+import { items } from "@/app/data/products";
 import { ProductProps } from "@/app/types/ProductTypes";
 import Footer from "@/app/ui/Footer";
-
-const items: ProductProps[] = [
-    {
-        productId: "1",
-        name: "The Monsters",
-        price: 500000,
-        imageUrl: "/product1.png"
-    },
-    {
-        productId: "2",
-        name: "Have A Seat",
-        price: 450000,
-        imageUrl: "/product2.png"
-    },
-    {
-        productId: "3",
-        name: "Crying Again",
-        price: 200000,
-        imageUrl: "/product3.png"
-    },
-    {
-        productId: "4",
-        name: "SMISKI",
-        price: 150000,
-        imageUrl: "/product4.png"
-    },
-    {
-        productId: "5",
-        name: "The Powerpuff Girls",
-        price: 175000,
-        imageUrl: "/product5.png"
-    },
-    {
-        productId: "6",
-        name: "Growing Up by Your Way",
-        price: 150000,
-        imageUrl: "/product6.png"
-    },
-    {
-        productId: "7",
-        name: "Pino Jelly",
-        price: 100000,
-        imageUrl: "/product7.png"
-    },
-];
 
 export default function Products() {
     const [cart, setCart] = useState<ProductProps[]>([]);
@@ -92,15 +48,19 @@ export default function Products() {
     return (
         <div className="h-full">
             <div>
-                <div className="flex flex-wrap gap-4 m-4 items-start ">
+                <div className="min-h-screen flex flex-wrap gap-4 m-4 items-start ">
                     {items.map(({ name, price, productId, imageUrl }) => (
                         <div key={productId} className="bg-white rounded-lg p-4 flex flex-col">
+                        <Link href={`/products/${productId}`}>
+                            <div className="cursor-pointer">
+                                <Image src={imageUrl} alt={name} width={200} height={200} style={{ objectFit: 'cover' }} />
+                            </div>
+                        </Link>
                         <div>
-                            <Image src={imageUrl} alt={name} width={200} height={200} style={{ objectFit: 'cover' }} />
-                        </div>
-                        <div>
-                            <div className="font-bold text-black">{name}</div>
-                            <div className="text-gray-600">{price}</div>
+                            <Link href={`/products/${productId}`}>
+                                <div className="font-bold text-black hover:text-pink-600 cursor-pointer">{name}</div>
+                            </Link>
+                            <div className="text-gray-600">Rp {price.toLocaleString('id-ID')}</div>
                         </div>
                         <div className="flex justify-between items-center mt-2">
                             <button className="bg-rose-300 text-white px-5 py-2 hover:bg-rose-200" onClick={(e) => handleClick(e, { name, price, productId, imageUrl })}>
