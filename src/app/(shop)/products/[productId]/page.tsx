@@ -9,12 +9,10 @@ export default function ProductDetail({ params }: { params: { productId: string 
         return (
             <div className="flex items-center justify-center py-40">
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center p-10 shadow-lg max-w-md">
-                    <h1 className="text-2xl font-bold text-gray-800 mb-2">Product Not Found</h1>
-                    <p className="text-gray-600 mb-6">
-                        Sorry, we couldn't find product with ID "{params.productId}" in our collection.
-                    </p>
-                    <Link 
-                        href="/products" 
+                    <div className="text-2xl font-bold text-gray-800 mb-2">Product Not Found</div>
+                    <div className="text-gray-600 mb-6">Sorry, we couldn't find product with ID "{params.productId}" in our collection.</div>
+                    <Link
+                        href="/products"
                         className="bg-pink-200 hover:bg-pink-100 rounded px-4 py-2 transition-colors">
                     Back To Products
                     </Link>
@@ -43,20 +41,16 @@ export default function ProductDetail({ params }: { params: { productId: string 
 
                         {/* info */}
                         <div className="md:w-1/2 p-8">
-                            <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.name}</h1>
-                            <p className="text-2xl font-semibold text-pink-600 mb-6">
-                                Rp {product.price.toLocaleString('id-ID')}
-                            </p>
-                            
+                            <div className="text-3xl font-bold text-gray-800 mb-4">{product.name}</div>
+                            <div className="text-2xl font-semibold text-pink-600 mb-6">Rp {product.price.toLocaleString('id-ID')}</div>
+
                             <div className="mb-6">
-                                <h3 className="text-lg font-semibold text-gray-700 mb-2">Description</h3>
-                                <p className="text-gray-600">
-                                Discover the magic of {product.name} - a unique collectible blind box that brings joy and surprise to your collection.
-                                </p>
+                                <div className="text-lg font-semibold text-gray-700 mb-2">Description</div>
+                                <div className="text-gray-600">Discover the magic of {product.name} - a unique collectible blind box that brings joy and surprise to your collection.</div>
                             </div>
 
                             <div className="mb-8">
-                                <h3 className="text-lg font-semibold text-gray-700 mb-2">Product Details</h3>
+                                <div className="text-lg font-semibold text-gray-700 mb-2">Product Details</div>
                                 <ul className="text-gray-600 space-y-1">
                                 <li>• Premium quality materials</li>
                                 <li>• Limited edition collectible</li>
