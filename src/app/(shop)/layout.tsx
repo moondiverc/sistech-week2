@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <header className="bg-pink-400 h-15 text-white flex px-4 items-center justify-between">
           <Image
-            src="/icon.png"
+            src="/logo.png"
             alt="Logo"
             width={50}
             height={50}

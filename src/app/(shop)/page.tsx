@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex justify-center py-45">
+    <main className="flex justify-center py-35">
       <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center inline-block p-10 shadow-lg">
         <h1 className="font-bold text-5xl pb-4 text-gray-800">HappyMart</h1>
         <h2 className="text-gray-700">Your Ultimate Blind Box Destination in the City!</h2>
