@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Heart } from 'react-feather';
 import { items } from "@/app/data/products";
 import { ProductProps } from "@/app/types/ProductTypes";
-import Footer from "@/app/ui/Footer";
+import Footer from "@/app/ui/Footer";       
 
 export default function Products() {
     const [cart, setCart] = useState<ProductProps[]>([]);
@@ -64,7 +64,7 @@ export default function Products() {
                             </Link>
                             <div className="text-gray-600">Rp {price.toLocaleString('id-ID')}</div>
                         </div>
-                        
+
                         <div className="flex justify-between items-center mt-2">
                             {/* tombol add to cart */}
                             <button className="bg-rose-300 text-white px-5 py-2 hover:bg-rose-200" onClick={(e) => handleClick(e, { name, price, productId, imageUrl })}>
