@@ -5,7 +5,7 @@ export default function Contact() {
         <main className="flex justify-center py-5">
             <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center p-8 shadow-lg max-w-2xl  mx-4">
                 <div className="font-bold text-3xl text-gray-800 mb-2">Contact Us!</div>
-                <div className="text-lg text-gray-600 mb-8">We'd love to hear from you. Get in touch with us!</div>
+                <div className="text-lg text-gray-600 mb-8">We love to hear from you. Get in touch with us!</div>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-4">
                     {/* WhatsApp */}

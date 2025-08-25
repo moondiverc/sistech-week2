@@ -10,7 +10,7 @@ export default function ProductDetail({ params }: { params: { productId: string 
             <div className="flex items-center justify-center py-40">
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center p-10 shadow-lg max-w-md">
                     <div className="text-2xl font-bold text-gray-800 mb-2">Product Not Found</div>
-                    <div className="text-gray-600 mb-6">Sorry, we couldn't find product with ID "{params.productId}" in our collection.</div>
+                    <div className="text-gray-600 mb-6">Sorry, we couldnt find product with ID {params.productId} in our collection.</div>
                     <Link
                         href="/products"
                         className="bg-pink-200 hover:bg-pink-100 rounded px-4 py-2 transition-colors">
